@@ -1,27 +1,31 @@
 <!--
 SYNC IMPACT REPORT - Constitution Update
-Version: 1.0.0 → 1.0.0 (Initial Creation)
+Version: 1.0.0 → 1.0.1 (Technical Standards Update)
 Ratification Date: 2025-01-15
 Last Amended: 2025-01-15
 
 CHANGES:
-- Initial constitution created for Hotel AI Booking Chatbot thesis project
-- Established core principles for AI chatbot development
-- Defined thesis-specific constraints and workflow
+- Added Next.js version requirement to Language and Framework Requirements
+- Expanded frontend framework specification for Next.js hotel website feature
+- Clarified scope boundaries to include full Next.js frontend development
 
 PRINCIPLE MODIFICATIONS:
-- None (initial creation)
+- None (principles unchanged)
+
+SECTIONS MODIFIED:
+- Technical Standards > Language and Framework Requirements: Added Next.js latest version requirement
+- Thesis-Specific Constraints > Scope Boundaries: Updated frontend development from MINIMAL to comprehensive Next.js implementation
 
 SECTIONS ADDED:
-- All sections created from template
+- None
 
 SECTIONS REMOVED:
 - None
 
 TEMPLATES STATUS:
-✅ .specify/templates/spec-template.md - Reviewed, compatible
-✅ .specify/templates/plan-template.md - Reviewed, compatible
-✅ .specify/templates/tasks-template.md - Reviewed, compatible
+✅ .specify/templates/spec-template.md - No changes needed, compatible
+✅ .specify/templates/plan-template.md - No changes needed, compatible
+✅ .specify/templates/tasks-template.md - No changes needed, compatible
 
 FOLLOW-UP ITEMS:
 - None at this time
@@ -71,6 +75,8 @@ Every major feature MUST include a working demonstration script or test suite th
 
 ### Language and Framework Requirements
 
+#### Backend Stack
+
 - **Primary Language**: Python 3.11+
 - **AI Framework**: LangGraph for multi-agent orchestration
 - **LLM Integration**: NVIDIA NIMs (meta/llama-3.3-70b-instruct)
@@ -79,7 +85,17 @@ Every major feature MUST include a working demonstration script or test suite th
 - **API Framework**: FastAPI for REST endpoints
 - **Authentication**: JWT with bcrypt password hashing
 
+#### Frontend Stack
+
+- **Frontend Framework**: Next.js (latest stable version at time of implementation)
+- **Package Manager**: npm or yarn (consistent with Next.js best practices)
+- **Styling**: CSS modules, Tailwind CSS, or styled-components (choose one, document choice)
+- **State Management**: React Context API or Zustand for lightweight state management
+- **HTTP Client**: fetch API or axios for backend API integration
+
 ### Code Quality Standards
+
+#### Backend (Python)
 
 - All Python code MUST follow PEP 8 style guidelines
 - Type hints MUST be used for function parameters and return values
@@ -87,12 +103,20 @@ Every major feature MUST include a working demonstration script or test suite th
 - Logging MUST be implemented for all major operations (INFO level minimum)
 - SQL queries MUST use parameterized statements (no string interpolation)
 
+#### Frontend (Next.js/TypeScript)
+
+- All Next.js code MUST use TypeScript for type safety
+- Components MUST follow React best practices (hooks, functional components)
+- ESLint and Prettier MUST be configured for code formatting consistency
+- All API calls MUST include proper error handling and loading states
+- Environment variables MUST be used for API endpoints and configuration
+
 ### Testing Requirements
 
 - Critical features (authentication, booking operations, cancellations) MUST have test scripts
 - Integration tests MUST validate end-to-end user journeys
 - Security tests MUST verify SQL injection protection and authorization
-- All tests MUST be executable via simple Python commands
+- All tests MUST be executable via simple Python commands (backend) or npm scripts (frontend)
 
 ### Data Standards
 
@@ -117,12 +141,13 @@ Every major feature MUST include a working demonstration script or test suite th
 - Demo account (<lightningboat24@gmail.com>) MUST always have working test data
 - Swagger UI MUST be accessible for API demonstration
 - Database MUST contain realistic sample data (50+ bookings)
+- Frontend MUST be accessible via browser for visual demonstration
 
 ### Scope Boundaries
 
 - Implementation MUST focus on core hotel operations (booking, cancellation, room info, concierge)
 - Advanced features (payment integration, multi-property, loyalty programs) are OPTIONAL
-- Frontend development is MINIMAL (use provided UI or API testing only)
+- Frontend development includes comprehensive Next.js website with chat UI, room catalog, and admin dashboard
 - Performance optimization is SECONDARY to functional correctness
 
 ## Development Workflow
@@ -200,4 +225,4 @@ If principles conflict in a specific scenario:
 3. Document the conflict scenario as inline comment
 4. Choose the approach that best serves thesis demonstration
 
-**Version**: 1.0.0 | **Ratified**: 2025-01-15 | **Last Amended**: 2025-01-15
+**Version**: 1.0.1 | **Ratified**: 2025-01-15 | **Last Amended**: 2025-01-15
