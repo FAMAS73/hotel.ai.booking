@@ -1,26 +1,308 @@
+/**
+ * Global Styles for Hotel AI Booking Chatbot Frontend
+ *
+ * Includes:
+ * - Tailwind CSS base styles
+ * - CSS variables for theming (light/dark modes)
+ * - Color palette: Blue, Green, Amber (NO PURPLE per constitution)
+ * - Typography and spacing utilities
+ * - Smooth theme transitions
+ *
+ * Theme is controlled via data-theme attribute on <html> element.
+ */
+
 @import "tailwindcss";
 
+/* =============================================================================
+   CSS VARIABLES - LIGHT THEME
+   ============================================================================= */
+
+:root[data-theme="light"],
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Background colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+
+  /* Text colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+
+  /* Accent colors (Blue - primary brand color) */
+  --accent: #3b82f6; /* blue-500 */
+  --accent-hover: #2563eb; /* blue-600 */
+  --accent-light: #dbeafe; /* blue-100 */
+
+  /* Success colors (Green) */
+  --success: #10b981; /* green-500 */
+  --success-hover: #059669; /* green-600 */
+  --success-light: #d1fae5; /* green-100 */
+
+  /* Error colors (Red) */
+  --error: #ef4444; /* red-500 */
+  --error-hover: #dc2626; /* red-600 */
+  --error-light: #fee2e2; /* red-100 */
+
+  /* Warning colors (Amber) */
+  --warning: #f59e0b; /* amber-500 */
+  --warning-hover: #d97706; /* amber-600 */
+  --warning-light: #fef3c7; /* amber-100 */
+
+  /* Info colors (Cyan) */
+  --info: #06b6d4; /* cyan-500 */
+  --info-hover: #0891b2; /* cyan-600 */
+  --info-light: #cffafe; /* cyan-100 */
+
+  /* Border colors */
+  --border: #e2e8f0;
+  --border-hover: #cbd5e0;
+
+  /* Shadow colors */
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-lg: rgba(0, 0, 0, 0.15);
+
+  /* Chat bubble colors */
+  --chat-user-bg: var(--accent);
+  --chat-user-text: #ffffff;
+  --chat-assistant-bg: var(--bg-tertiary);
+  --chat-assistant-text: var(--text-primary);
+
+  /* Room availability badge colors */
+  --available-bg: var(--success-light);
+  --available-text: var(--success);
+  --limited-bg: var(--warning-light);
+  --limited-text: var(--warning);
+  --sold-out-bg: var(--error-light);
+  --sold-out-text: var(--error);
 }
+
+/* =============================================================================
+   CSS VARIABLES - DARK THEME
+   ============================================================================= */
+
+:root[data-theme="dark"] {
+  /* Background colors */
+  --bg-primary: #0f172a; /* slate-900 */
+  --bg-secondary: #1e293b; /* slate-800 */
+  --bg-tertiary: #334155; /* slate-700 */
+
+  /* Text colors */
+  --text-primary: #f1f5f9; /* slate-100 */
+  --text-secondary: #cbd5e1; /* slate-300 */
+  --text-muted: #94a3b8; /* slate-400 */
+
+  /* Accent colors (Blue - adjusted for dark mode) */
+  --accent: #60a5fa; /* blue-400 */
+  --accent-hover: #3b82f6; /* blue-500 */
+  --accent-light: #1e3a8a; /* blue-900 */
+
+  /* Success colors (Green - adjusted) */
+  --success: #34d399; /* green-400 */
+  --success-hover: #10b981; /* green-500 */
+  --success-light: #064e3b; /* green-900 */
+
+  /* Error colors (Red - adjusted) */
+  --error: #f87171; /* red-400 */
+  --error-hover: #ef4444; /* red-500 */
+  --error-light: #7f1d1d; /* red-900 */
+
+  /* Warning colors (Amber - adjusted) */
+  --warning: #fbbf24; /* amber-400 */
+  --warning-hover: #f59e0b; /* amber-500 */
+  --warning-light: #78350f; /* amber-900 */
+
+  /* Info colors (Cyan - adjusted) */
+  --info: #22d3ee; /* cyan-400 */
+  --info-hover: #06b6d4; /* cyan-500 */
+  --info-light: #164e63; /* cyan-900 */
+
+  /* Border colors */
+  --border: #334155; /* slate-700 */
+  --border-hover: #475569; /* slate-600 */
+
+  /* Shadow colors */
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+
+  /* Chat bubble colors */
+  --chat-user-bg: var(--accent);
+  --chat-user-text: #ffffff;
+  --chat-assistant-bg: var(--bg-tertiary);
+  --chat-assistant-text: var(--text-primary);
+
+  /* Room availability badge colors */
+  --available-bg: var(--success-light);
+  --available-text: var(--success);
+  --limited-bg: var(--warning-light);
+  --limited-text: var(--warning);
+  --sold-out-bg: var(--error-light);
+  --sold-out-text: var(--error);
+}
+
+/* =============================================================================
+   TAILWIND THEME CONFIGURATION
+   ============================================================================= */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Map CSS variables to Tailwind theme */
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+
+  /* Custom color extensions for Tailwind */
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+
+  /* Font families (using system fonts for better performance) */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+  /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  /* Smooth theme transitions (300ms per spec) */
+  transition: background-color 300ms ease, color 300ms ease;
+  /* Prevent layout shift on load */
+  min-height: 100vh;
+}
+
+/* =============================================================================
+   ACCESSIBILITY
+   ============================================================================= */
+
+/* Skip to content link for screen readers */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Focus visible styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =============================================================================
+   UTILITY CLASSES
+   ============================================================================= */
+
+/* Smooth theme transitions for all elements */
+.theme-transition {
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 300ms ease-in-out;
+}
+
+/* Slide up animation (for toasts) */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 300ms ease-out;
+}
+
+/* =============================================================================
+   SCROLLBAR STYLING (Chrome, Safari, Edge)
+   ============================================================================= */
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) var(--bg-secondary);
 }
