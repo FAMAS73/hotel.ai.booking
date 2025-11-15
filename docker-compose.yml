@@ -1,0 +1,176 @@
+# Docker Compose Configuration for Hotel AI Booking Chatbot
+# Full-stack development environment with frontend + backend
+#
+# Services:
+# - frontend: Next.js application (port 3000)
+# - backend: FastAPI application (port 8000) - assumes ai-virtual-assistant
+# - postgres: PostgreSQL database (port 5432)
+# - milvus: Vector database for RAG (port 19530)
+# - redis: Session management (port 6379)
+#
+# Usage:
+#   docker-compose up -d          # Start all services
+#   docker-compose logs -f        # View logs
+#   docker-compose down           # Stop all services
+
+version: '3.8'
+
+services:
+  # Next.js Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: hotel-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      # Backend API URL (internal Docker network)
+      NEXT_PUBLIC_API_URL: http://backend:8000
+      NEXT_PUBLIC_AUTH_MODE: demo
+      NEXT_PUBLIC_DEFAULT_THEME: system
+      NEXT_PUBLIC_DEMO_EMAIL: lightningboat24@gmail.com
+      NEXT_PUBLIC_DEMO_PASSWORD: demo123
+      NEXT_PUBLIC_REALTIME_POLLING_INTERVAL: 5000
+      NEXT_PUBLIC_MAX_IMAGE_SIZE_MB: 5
+      NEXT_PUBLIC_ALLOWED_IMAGE_FORMATS: image/jpeg,image/png,image/webp
+      NEXT_PUBLIC_DEBUG_MODE: true
+    depends_on:
+      - backend
+    networks:
+      - hotel-network
+    restart: unless-stopped
+
+  # FastAPI Backend (AI Virtual Assistant)
+  # Note: Assumes backend exists in ai-virtual-assistant/ directory
+  backend:
+    build:
+      context: ./ai-virtual-assistant
+      dockerfile: Dockerfile
+    container_name: hotel-backend
+    ports:
+      - "8000:8000"
+    environment:
+      # Database connection
+      DATABASE_URL: postgresql://hotel_user:hotel_pass@postgres:5432/hotel_db
+      # Redis connection for sessions
+      REDIS_URL: redis://redis:6379/0
+      # Milvus connection for RAG
+      MILVUS_HOST: milvus
+      MILVUS_PORT: 19530
+      # NVIDIA NIM API configuration
+      NVIDIA_API_KEY: ${NVIDIA_API_KEY}
+      # JWT secret (must match frontend if using real auth)
+      JWT_SECRET: ${JWT_SECRET:-thesis-demo-secret-key-change-in-production}
+    depends_on:
+      - postgres
+      - redis
+      - milvus
+    networks:
+      - hotel-network
+    restart: unless-stopped
+    volumes:
+      # Mount for development hot-reload (optional)
+      - ./ai-virtual-assistant:/app
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: hotel-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: hotel_user
+      POSTGRES_PASSWORD: hotel_pass
+      POSTGRES_DB: hotel_db
+    volumes:
+      # Persist database data
+      - postgres_data:/var/lib/postgresql/data
+      # Initialize database schema (if needed)
+      # - ./ai-virtual-assistant/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - hotel-network
+    restart: unless-stopped
+
+  # Redis for Session Management
+  redis:
+    image: redis:7-alpine
+    container_name: hotel-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - hotel-network
+    restart: unless-stopped
+
+  # Milvus Vector Database for RAG
+  # Standalone mode for thesis demonstration
+  milvus:
+    image: milvusdb/milvus:latest
+    container_name: hotel-milvus
+    ports:
+      - "19530:19530"
+      - "9091:9091"
+    environment:
+      ETCD_ENDPOINTS: etcd:2379
+      MINIO_ADDRESS: minio:9000
+    depends_on:
+      - etcd
+      - minio
+    volumes:
+      - milvus_data:/var/lib/milvus
+    networks:
+      - hotel-network
+    restart: unless-stopped
+
+  # etcd for Milvus
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.5
+    container_name: hotel-etcd
+    environment:
+      ETCD_AUTO_COMPACTION_MODE: revision
+      ETCD_AUTO_COMPACTION_RETENTION: "1000"
+      ETCD_QUOTA_BACKEND_BYTES: "4294967296"
+      ETCD_SNAPSHOT_COUNT: "50000"
+    volumes:
+      - etcd_data:/etcd
+    command: etcd -advertise-client-urls=http://127.0.0.1:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd
+    networks:
+      - hotel-network
+    restart: unless-stopped
+
+  # MinIO for Milvus object storage
+  minio:
+    image: minio/minio:latest
+    container_name: hotel-minio
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - minio_data:/minio_data
+    command: minio server /minio_data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - hotel-network
+    restart: unless-stopped
+
+# Docker Networks
+networks:
+  hotel-network:
+    driver: bridge
+
+# Persistent Volumes
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  milvus_data:
+    driver: local
+  etcd_data:
+    driver: local
+  minio_data:
+    driver: local
