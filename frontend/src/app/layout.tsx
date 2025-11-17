@@ -12,7 +12,7 @@
  * @module app/layout
  */
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 /**
@@ -32,17 +32,22 @@ export const metadata: Metadata = {
     'hotel reservations',
   ],
   authors: [{ name: 'Hotel AI Chatbot Team' }],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
   openGraph: {
     title: 'Hotel AI Booking Chatbot',
     description: 'Book your stay with our intelligent AI assistant',
     type: 'website',
     locale: 'en_US',
   },
+};
+
+/**
+ * Viewport configuration for responsive design.
+ * Separated from metadata per Next.js 15+ requirements.
+ */
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 /**

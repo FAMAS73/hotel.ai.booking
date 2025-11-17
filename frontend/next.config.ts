@@ -18,8 +18,21 @@ const nextConfig: NextConfig = {
 
   // Image optimization configuration
   images: {
-    // Allow images from backend API and public folder
-    domains: ['localhost'],
+    // Allow images from backend API and public folder using secure remotePatterns
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '8000',
+        pathname: '/api/images/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '',
+        pathname: '/**',
+      },
+    ],
     // Optimize for hotel/room images (JPEG, PNG, WebP)
     formats: ['image/webp', 'image/avif'],
     // Device sizes for responsive images
