@@ -108,11 +108,11 @@
 
 ### Implementation for User Story 2
 
-- [ ] T047 [P] [US2] Create Room API client in frontend/src/lib/api/rooms.ts
-- [ ] T048 [P] [US2] Create useRooms hook with SWR in frontend/src/lib/hooks/useRooms.ts
-- [ ] T049 [P] [US2] Create DatePicker component in frontend/src/components/ui/DatePicker.tsx
-- [ ] T050 [P] [US2] Create Select component in frontend/src/components/ui/Select.tsx
-- [ ] T051 [P] [US2] Create AvailabilityBadge component in frontend/src/components/rooms/AvailabilityBadge.tsx
+- [X] T047 [P] [US2] Create Room API client in frontend/src/lib/api/rooms.ts
+- [X] T048 [P] [US2] Create useRooms hook with SWR in frontend/src/lib/hooks/useRooms.ts
+- [X] T049 [P] [US2] Create DatePicker component in frontend/src/components/ui/DatePicker.tsx
+- [X] T050 [P] [US2] Create Select component in frontend/src/components/ui/Select.tsx
+- [X] T051 [P] [US2] Create AvailabilityBadge component in frontend/src/components/rooms/AvailabilityBadge.tsx
 - [ ] T052 [P] [US2] Create RoomCard component in frontend/src/components/rooms/RoomCard.tsx
 - [ ] T053 [US2] Create RoomFilter component in frontend/src/components/rooms/RoomFilter.tsx (uses T049, T050)
 - [ ] T054 [P] [US2] Create RoomGallery component with lightbox in frontend/src/components/rooms/RoomGallery.tsx
