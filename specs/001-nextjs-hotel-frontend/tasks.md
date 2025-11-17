@@ -126,13 +126,13 @@
 
 ### Booking Flow Integration for User Story 2
 
-- [ ] T062 [P] [US2] Create bookingStore for multi-step flow in frontend/src/lib/stores/bookingStore.ts
-- [ ] T063 [P] [US2] Create Bookings API client in frontend/src/lib/api/bookings.ts
-- [ ] T064 [P] [US2] Create BookingForm component in frontend/src/components/bookings/BookingForm.tsx
-- [ ] T065 [US2] Integrate BookingForm into room detail page (/rooms/[id]) with "Book Now" button
-- [ ] T066 [US2] Add booking confirmation flow (select dates, guests, special requests)
-- [ ] T067 [US2] Add booking submission to backend API with loading/error states
-- [ ] T068 [US2] Add booking success modal with confirmation details
+- [X] T062 [P] [US2] Create bookingStore for multi-step flow in frontend/src/lib/stores/bookingStore.ts
+- [X] T063 [P] [US2] Create Bookings API client in frontend/src/lib/api/bookings.ts
+- [X] T064 [P] [US2] Create BookingForm component in frontend/src/components/bookings/BookingForm.tsx
+- [X] T065 [US2] Integrate BookingForm into room detail page (/rooms/[id]) with "Book Now" button
+- [X] T066 [US2] Add booking confirmation flow (select dates, guests, special requests)
+- [X] T067 [US2] Add booking submission to backend API with loading/error states
+- [X] T068 [US2] Add booking success modal with confirmation details
 
 ### Testing for User Story 2
 
