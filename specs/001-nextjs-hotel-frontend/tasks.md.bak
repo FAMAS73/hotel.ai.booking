@@ -33,7 +33,7 @@
 - [X] T007 [P] Create environment variables template in frontend/.env.example
 - [X] T008 [P] Configure Next.js standalone output mode in frontend/next.config.js
 - [X] T009 [P] Create Docker configuration in frontend/Dockerfile
-- [X] T010 [P] Create docker-compose.yml for local development with backend
+- [ ] T010 [P] Create docker-compose.yml for local development with backend
 
 ---
 
@@ -43,24 +43,24 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [X] T011 Create TypeScript type definitions in frontend/src/types/index.ts (from data-model.md)
-- [X] T012 [P] Create base API client with JWT auth in frontend/src/lib/api/client.ts
-- [X] T013 [P] Create authStore in frontend/src/lib/stores/authStore.ts
-- [X] T014 [P] Create uiStore for modals/toasts in frontend/src/lib/stores/uiStore.ts
-- [X] T015 [P] Create useAuth hook in frontend/src/lib/hooks/useAuth.ts
-- [X] T016 [P] Create useTheme hook in frontend/src/lib/hooks/useTheme.ts
-- [X] T017 Create globals.css with CSS variables and Tailwind base in frontend/src/app/globals.css
-- [X] T018 Create root layout with theme provider in frontend/src/app/layout.tsx
-- [X] T019 [P] Create shared UI components: Button in frontend/src/components/ui/Button.tsx
-- [X] T020 [P] Create shared UI components: Card in frontend/src/components/ui/Card.tsx
-- [X] T021 [P] Create shared UI components: Modal in frontend/src/components/ui/Modal.tsx
-- [X] T022 [P] Create shared UI components: Input in frontend/src/components/ui/Input.tsx
-- [X] T023 [P] Create shared UI components: LoadingSpinner in frontend/src/components/ui/LoadingSpinner.tsx
-- [X] T024 [P] Create shared UI components: ErrorMessage in frontend/src/components/ui/ErrorMessage.tsx
-- [X] T025 Create Header component with navigation in frontend/src/components/layout/Header.tsx
-- [X] T026 Create Footer component in frontend/src/components/layout/Footer.tsx
-- [X] T027 Create ThemeToggle component in frontend/src/components/layout/ThemeToggle.tsx
-- [X] T028 Create utility functions (date, currency, validation) in frontend/src/lib/utils/
+- [ ] T011 Create TypeScript type definitions in frontend/src/types/index.ts (from data-model.md)
+- [ ] T012 [P] Create base API client with JWT auth in frontend/src/lib/api/client.ts
+- [ ] T013 [P] Create authStore in frontend/src/lib/stores/authStore.ts
+- [ ] T014 [P] Create uiStore for modals/toasts in frontend/src/lib/stores/uiStore.ts
+- [ ] T015 [P] Create useAuth hook in frontend/src/lib/hooks/useAuth.ts
+- [ ] T016 [P] Create useTheme hook in frontend/src/lib/hooks/useTheme.ts
+- [ ] T017 Create globals.css with CSS variables and Tailwind base in frontend/src/app/globals.css
+- [ ] T018 Create root layout with theme provider in frontend/src/app/layout.tsx
+- [ ] T019 [P] Create shared UI components: Button in frontend/src/components/ui/Button.tsx
+- [ ] T020 [P] Create shared UI components: Card in frontend/src/components/ui/Card.tsx
+- [ ] T021 [P] Create shared UI components: Modal in frontend/src/components/ui/Modal.tsx
+- [ ] T022 [P] Create shared UI components: Input in frontend/src/components/ui/Input.tsx
+- [ ] T023 [P] Create shared UI components: LoadingSpinner in frontend/src/components/ui/LoadingSpinner.tsx
+- [ ] T024 [P] Create shared UI components: ErrorMessage in frontend/src/components/ui/ErrorMessage.tsx
+- [ ] T025 Create Header component with navigation in frontend/src/components/layout/Header.tsx
+- [ ] T026 Create Footer component in frontend/src/components/layout/Footer.tsx
+- [ ] T027 Create ThemeToggle component in frontend/src/components/layout/ThemeToggle.tsx
+- [ ] T028 Create utility functions (date, currency, validation) in frontend/src/lib/utils/
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -74,21 +74,21 @@
 
 ### Implementation for User Story 1
 
-- [X] T029 [P] [US1] Create Chat API client in frontend/src/lib/api/chat.ts
-- [X] T030 [P] [US1] Create chatStore for session/messages in frontend/src/lib/stores/chatStore.ts
-- [X] T031 [P] [US1] Create ChatMessage component in frontend/src/components/chat/ChatMessage.tsx
-- [X] T032 [P] [US1] Create TypingIndicator component in frontend/src/components/chat/TypingIndicator.tsx
-- [X] T033 [P] [US1] Create ChatInput component in frontend/src/components/chat/ChatInput.tsx
-- [X] T034 [US1] Create ChatInterface container component in frontend/src/components/chat/ChatInterface.tsx (integrates T031-T033)
-- [X] T035 [US1] Create chat page in frontend/src/app/chat/page.tsx
-- [X] T036 [US1] Add rich message formatting support (markdown, links) in ChatMessage component
-- [X] T037 [US1] Implement auto-scroll to latest message in ChatInterface
-- [X] T038 [US1] Add session management (new chat, load history) in ChatInterface
-- [X] T039 [US1] Add inline comments explaining chat logic per constitution principle I
+- [ ] T029 [P] [US1] Create Chat API client in frontend/src/lib/api/chat.ts
+- [ ] T030 [P] [US1] Create chatStore for session/messages in frontend/src/lib/stores/chatStore.ts
+- [ ] T031 [P] [US1] Create ChatMessage component in frontend/src/components/chat/ChatMessage.tsx
+- [ ] T032 [P] [US1] Create TypingIndicator component in frontend/src/components/chat/TypingIndicator.tsx
+- [ ] T033 [P] [US1] Create ChatInput component in frontend/src/components/chat/ChatInput.tsx
+- [ ] T034 [US1] Create ChatInterface container component in frontend/src/components/chat/ChatInterface.tsx (integrates T031-T033)
+- [ ] T035 [US1] Create chat page in frontend/src/app/chat/page.tsx
+- [ ] T036 [US1] Add rich message formatting support (markdown, links) in ChatMessage component
+- [ ] T037 [US1] Implement auto-scroll to latest message in ChatInterface
+- [ ] T038 [US1] Add session management (new chat, load history) in ChatInterface
+- [ ] T039 [US1] Add inline comments explaining chat logic per constitution principle I
 
 ### Testing for User Story 1
 
-- [X] T040 [US1] Test live chat: Send message "What are my bookings?" and verify AI response
+- [ ] T040 [US1] Test live chat: Send message "What are my bookings?" and verify AI response
 - [ ] T041 [US1] Test live chat: Ask about room types and verify AI provides room information
 - [ ] T042 [US1] Test live chat: Ask about Bangkok attractions and verify concierge responses
 - [ ] T043 [US1] Test chat session persistence: Refresh page and verify conversation history loads
