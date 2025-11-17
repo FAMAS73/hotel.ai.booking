@@ -113,16 +113,16 @@
 - [X] T049 [P] [US2] Create DatePicker component in frontend/src/components/ui/DatePicker.tsx
 - [X] T050 [P] [US2] Create Select component in frontend/src/components/ui/Select.tsx
 - [X] T051 [P] [US2] Create AvailabilityBadge component in frontend/src/components/rooms/AvailabilityBadge.tsx
-- [ ] T052 [P] [US2] Create RoomCard component in frontend/src/components/rooms/RoomCard.tsx
-- [ ] T053 [US2] Create RoomFilter component in frontend/src/components/rooms/RoomFilter.tsx (uses T049, T050)
-- [ ] T054 [P] [US2] Create RoomGallery component with lightbox in frontend/src/components/rooms/RoomGallery.tsx
-- [ ] T055 [US2] Create RoomList container component in frontend/src/components/rooms/RoomList.tsx
-- [ ] T056 [US2] Create rooms catalog page in frontend/src/app/rooms/page.tsx
-- [ ] T057 [P] [US2] Create RoomDetails component in frontend/src/components/rooms/RoomDetails.tsx
-- [ ] T058 [US2] Create room detail page in frontend/src/app/rooms/[id]/page.tsx
-- [ ] T059 [US2] Add image optimization with Next.js Image component in RoomCard and RoomGallery
-- [ ] T060 [US2] Implement responsive grid layout (1 col mobile, 3+ cols desktop) in RoomList
-- [ ] T061 [US2] Add inline comments explaining room catalog logic per constitution
+- [X] T052 [P] [US2] Create RoomCard component in frontend/src/components/rooms/RoomCard.tsx
+- [X] T053 [US2] Create RoomFilter component in frontend/src/components/rooms/RoomFilter.tsx (uses T049, T050)
+- [X] T054 [P] [US2] Create RoomGallery component with lightbox in frontend/src/components/rooms/RoomGallery.tsx
+- [X] T055 [US2] Create RoomList container component in frontend/src/components/rooms/RoomList.tsx
+- [X] T056 [US2] Create rooms catalog page in frontend/src/app/rooms/page.tsx
+- [X] T057 [P] [US2] Create RoomDetails component in frontend/src/components/rooms/RoomDetails.tsx
+- [X] T058 [US2] Create room detail page in frontend/src/app/rooms/[id]/page.tsx
+- [X] T059 [US2] Add image optimization with Next.js Image component in RoomCard and RoomGallery
+- [X] T060 [US2] Implement responsive grid layout (1 col mobile, 3+ cols desktop) in RoomList
+- [X] T061 [US2] Add inline comments explaining room catalog logic per constitution
 
 ### Booking Flow Integration for User Story 2
 
