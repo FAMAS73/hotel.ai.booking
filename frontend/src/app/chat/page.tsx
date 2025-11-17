@@ -8,6 +8,7 @@
 
 import type { Metadata } from 'next';
 import { ChatInterface } from '@/components/chat/ChatInterface';
+import { Header } from '@/components/layout/Header';
 
 /**
  * Metadata for chat page SEO.
@@ -27,7 +28,10 @@ export const metadata: Metadata = {
 export default function ChatPage() {
   return (
     <div className="h-screen flex flex-col">
-      <ChatInterface />
+      <Header />
+      <div className="flex-1 overflow-hidden">
+        <ChatInterface />
+      </div>
     </div>
   );
 }
