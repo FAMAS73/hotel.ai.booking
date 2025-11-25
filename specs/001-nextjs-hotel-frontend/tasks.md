@@ -89,12 +89,12 @@
 ### Testing for User Story 1
 
 - [X] T040 [US1] Test live chat: Send message "What are my bookings?" and verify AI response
-- [ ] T041 [US1] Test live chat: Ask about room types and verify AI provides room information
-- [ ] T042 [US1] Test live chat: Ask about Bangkok attractions and verify concierge responses
-- [ ] T043 [US1] Test chat session persistence: Refresh page and verify conversation history loads
-- [ ] T044 [US1] Test new chat session: Create new chat and verify previous messages archived
-- [ ] T045 [US1] Test typing indicator: Verify animation appears while waiting for AI response
-- [ ] T046 [US1] Test auto-scroll: Send multiple messages and verify scroll to latest works
+- [X] T041 [US1] Test live chat: Ask about room types and verify AI provides room information
+- [X] T042 [US1] Test live chat: Ask about Bangkok attractions and verify concierge responses
+- [X] T043 [US1] Test chat session persistence: Refresh page and verify conversation history loads
+- [X] T044 [US1] Test new chat session: Create new chat and verify previous messages archived
+- [ ] T045 [US1] Test typing indicator: Verify animation appears while waiting for AI response (requires browser testing)
+- [ ] T046 [US1] Test auto-scroll: Send multiple messages and verify scroll to latest works (requires browser testing)
 
 **Checkpoint**: User Story 1 complete - chat interface fully functional and independently testable with live AI interaction
 
