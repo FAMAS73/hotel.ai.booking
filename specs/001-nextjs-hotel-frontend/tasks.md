@@ -160,20 +160,20 @@
 
 ### Implementation for User Story 5
 
-- [ ] T078 [P] [US5] Create Auth API client in frontend/src/lib/api/auth.ts
-- [ ] T079 [P] [US5] Create LoginForm component in frontend/src/components/auth/LoginForm.tsx
-- [ ] T080 [P] [US5] Create RegisterForm component in frontend/src/components/auth/RegisterForm.tsx
-- [ ] T081 [P] [US5] Create ProtectedRoute wrapper in frontend/src/components/auth/ProtectedRoute.tsx
-- [ ] T082 [US5] Create auth layout in frontend/src/app/auth/layout.tsx
-- [ ] T083 [US5] Create login page in frontend/src/app/auth/login/page.tsx
-- [ ] T084 [US5] Create register page in frontend/src/app/auth/register/page.tsx
-- [ ] T085 [P] [US5] Create ProfileForm component in frontend/src/components/profile/ProfileForm.tsx
-- [ ] T086 [P] [US5] Create BookingHistory component in frontend/src/components/profile/BookingHistory.tsx
-- [ ] T087 [US5] Create profile page in frontend/src/app/profile/page.tsx
-- [ ] T088 [US5] Implement JWT token management (httpOnly cookies or localStorage with warnings)
-- [ ] T089 [US5] Add token refresh logic in API client
-- [ ] T090 [US5] Implement route protection middleware in frontend/src/middleware.ts
-- [ ] T091 [US5] Add inline comments explaining auth flow per constitution
+- [X] T078 [P] [US5] Create Auth API client in frontend/src/lib/api/auth.ts
+- [X] T079 [P] [US5] Create LoginForm component in frontend/src/components/auth/LoginForm.tsx
+- [X] T080 [P] [US5] Create RegisterForm component in frontend/src/components/auth/RegisterForm.tsx
+- [X] T081 [P] [US5] Create ProtectedRoute wrapper in frontend/src/components/auth/ProtectedRoute.tsx
+- [X] T082 [US5] Create auth layout in frontend/src/app/auth/layout.tsx
+- [X] T083 [US5] Create login page in frontend/src/app/auth/login/page.tsx
+- [X] T084 [US5] Create register page in frontend/src/app/auth/register/page.tsx
+- [X] T085 [P] [US5] Create ProfileForm component in frontend/src/components/profile/ProfileForm.tsx
+- [X] T086 [P] [US5] Create BookingHistory component in frontend/src/components/profile/BookingHistory.tsx
+- [X] T087 [US5] Create profile page in frontend/src/app/profile/page.tsx
+- [X] T088 [US5] Implement JWT token management (httpOnly cookies or localStorage with warnings)
+- [X] T089 [US5] Add token refresh logic in API client
+- [X] T090 [US5] Implement route protection middleware in frontend/src/middleware.ts
+- [X] T091 [US5] Add inline comments explaining auth flow per constitution
 
 ### Testing for User Story 5
 
