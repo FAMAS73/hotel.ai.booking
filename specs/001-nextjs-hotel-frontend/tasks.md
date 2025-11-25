@@ -200,9 +200,9 @@
 
 ### Implementation for User Story 3
 
-- [ ] T100 [P] [US3] Create useBookings hook with SWR in frontend/src/lib/hooks/useBookings.ts
-- [ ] T101 [P] [US3] Create useAdminDashboard hook in frontend/src/lib/hooks/useAdminDashboard.ts
-- [ ] T102 [P] [US3] Create DashboardStats component in frontend/src/components/admin/DashboardStats.tsx
+- [X] T100 [P] [US3] Create useBookings hook with SWR in frontend/src/lib/hooks/useBookings.ts
+- [X] T101 [P] [US3] Create useAdminDashboard hook in frontend/src/lib/hooks/useAdminDashboard.ts
+- [X] T102 [P] [US3] Create DashboardStats component in frontend/src/components/admin/DashboardStats.tsx
 - [ ] T103 [P] [US3] Create OccupancyChart component in frontend/src/components/admin/OccupancyChart.tsx
 - [ ] T104 [P] [US3] Create RevenueChart component in frontend/src/components/admin/RevenueChart.tsx
 - [ ] T105 [P] [US3] Create BookingFilters component in frontend/src/components/admin/BookingFilters.tsx
