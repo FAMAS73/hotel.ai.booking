@@ -136,14 +136,14 @@
 
 ### Testing for User Story 2
 
-- [ ] T069 [US2] Test room catalog: Navigate to /rooms and verify all 5 room types display
-- [ ] T070 [US2] Test date filtering: Select check-in/out dates and verify availability updates
-- [ ] T071 [US2] Test guest count filter: Change guest count and verify room capacity filtering
-- [ ] T072 [US2] Test room card click: Click on room card and verify detail page opens
+- [X] T069 [US2] Test room catalog: Navigate to /rooms and verify all 5 room types display
+- [X] T070 [US2] Test date filtering: Select check-in/out dates and verify availability updates
+- [X] T071 [US2] Test guest count filter: Change guest count and verify room capacity filtering
+- [X] T072 [US2] Test room card click: Click on room card and verify detail page opens
 - [ ] T073 [US2] Test image gallery: Click through room images and verify lightbox works
-- [ ] T074 [US2] Test booking flow: Click "Book Now", fill form, and submit booking
-- [ ] T075 [US2] Test booking API: Verify booking created in backend database
-- [ ] T076 [US2] Test booking validation: Try invalid dates and verify error messages
+- [X] T074 [US2] Test booking flow: Click "Book Now", fill form, and submit booking
+- [X] T075 [US2] Test booking API: Verify booking created in backend database
+- [X] T076 [US2] Test booking validation: Try invalid dates and verify error messages
 - [ ] T077 [US2] Test responsive layout: Verify grid layout on mobile (1 col) and desktop (3 cols)
 
 **Checkpoint**: User Story 2 complete - room catalog and booking flow fully functional with live testing
